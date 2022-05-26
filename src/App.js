@@ -12,8 +12,8 @@ class App extends React.Component {
   state = {
     news: JSONSecond,
     filtered:[],
-    footerText: 'I am Happy Footer'
-
+    footerText: 'I am Happy Footer',
+    active: true,
   }
 
   getKeywords = (event) => {
@@ -32,7 +32,7 @@ class App extends React.Component {
 
   render(){
 
-    const {news ,footerText,filtered} = this.state;
+    const {news ,footerText,filtered,active} = this.state;
     console.log(this.state.news)
     return (
       <div>
@@ -43,8 +43,11 @@ class App extends React.Component {
               <h1>Header</h1>
 
           </NewsList>
+          { active ? <Life/> : null }
           
-          <Life/>
+          <button onClick={() => this.setState({ active: !this.state.active})}>
+
+          </button>
           
           <Footer footerText={footerText}/>
         </>
