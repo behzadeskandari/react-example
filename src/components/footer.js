@@ -6,6 +6,7 @@ class Footer extends Component {
         super(props);
         
     }
+    
     render(){
         return(
             <footer>
